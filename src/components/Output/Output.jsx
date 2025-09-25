@@ -1,24 +1,10 @@
-import { useState } from 'react';
+import CopyToClipboard from '../CopyToClipboard/CopyToClipboard';
 
 const Output = ({ text }) => {
-    const [buttonText, setButtonText] = useState('Copy to clipboard');
-
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        if (!text) return;
-        navigator.clipboard.writeText(text);
-
-        setButtonText('Copied!');
-        setTimeout(() => {
-            setButtonText('Copy to clipboard');
-        }, 2000);
-    }
-
     return (
         <>
-            <h2>Copy transformed text</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>Copy item name</h2>
+            <div>
                 <textarea
                     defaultValue={text}
                     rows='1'
@@ -26,9 +12,9 @@ const Output = ({ text }) => {
                     readOnly={true}
                 ></textarea>
                 <div className='grid'>
-                    <button>{buttonText}</button>
+                    <CopyToClipboard text={text} />
                 </div>
-            </form>
+            </div>
         </>
     );
 };

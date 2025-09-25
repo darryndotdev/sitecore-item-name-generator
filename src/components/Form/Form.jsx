@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CopyToClipboard from '../CopyToClipboard/CopyToClipboard';
 
 const Form = ({ onSetText }) => {
     const [textToConvert, setTextToConvert] = useState('');
@@ -41,11 +42,15 @@ const Form = ({ onSetText }) => {
                 ></textarea>
                 <div className='grid'>
                     <button>Convert text</button>
-                    <button onClick={handleReset} className='outline'>
+
+                    <button onClick={handleReset} className='contrast'>
                         Reset
                     </button>
                 </div>
             </form>
+            <div className='grid' style={{ marginTop: '1rem' }}>
+                <CopyToClipboard text={textToConvert} className='outline' />
+            </div>
         </>
     );
 };
