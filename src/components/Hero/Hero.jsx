@@ -5,12 +5,12 @@ const Hero = () => {
     return (
         <header className={styles.hero}>
             <div>
-                <h1>Convert text to HTML</h1>
+                <h1>Sitecore item name generator</h1>
                 <DarkModeToggle />
             </div>
             <p>
-                A powerful tool designed to save you time and reduce errors by
-                transforming plain text into clean and structured HTML.
+                Conveniently convert any text into a Sitecore-ready item name.
+                Simple, consistent and error-free.
             </p>
         </header>
     );

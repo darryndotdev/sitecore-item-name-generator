@@ -6,13 +6,13 @@ import Centralised from './components/UI/Centralised/Centralised';
 import Output from './components/Output/Output';
 
 function App() {
-    const [textToConvert, setTextToConvert] = useState('');
+    const [text, setText] = useState('');
     return (
         <>
             <Centralised>
                 <Hero />
-                <Form onSetTextToConvert={setTextToConvert} />
-                <Output textToConvert={textToConvert} />
+                <Form onSetText={setText} />
+                <Output text={text} />
             </Centralised>
         </>
     );

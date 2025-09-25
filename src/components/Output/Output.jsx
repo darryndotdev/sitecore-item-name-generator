@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-const Output = ({ textToConvert }) => {
+const Output = ({ text }) => {
     const [buttonText, setButtonText] = useState('Copy to clipboard');
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (!textToConvert) return;
-        navigator.clipboard.writeText(textToConvert);
+        if (!text) return;
+        navigator.clipboard.writeText(text);
 
         setButtonText('Copied!');
         setTimeout(() => {
@@ -20,8 +20,8 @@ const Output = ({ textToConvert }) => {
             <h2>Copy transformed text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea
-                    defaultValue={textToConvert}
-                    rows='4'
+                    defaultValue={text}
+                    rows='1'
                     cols='40'
                     readOnly={true}
                 ></textarea>
