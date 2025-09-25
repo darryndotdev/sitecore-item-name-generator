@@ -1,0 +1,18 @@
+// Pico with violet primary color
+@use '@picocss/pico/scss/pico' with (
+    $theme-color: 'violet'
+);
+
+h1 {
+    margin-bottom: 0;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header div button {
+    border: none;
+}
